@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DIP-Demo</title>
+  <style>
+    body {
+      background-color: black;
+      color: grey;
+    }
+
+    .player {
+      margin: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .fps-num {
+      font-size: 50px;
+    }
+
+    .video {
+      display: none;
+    }
+
+    .fps {
+      width: 400px;
+    }
+
+    .operation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+
+    .operation-item {
+      width: 200px;
+    }
+
+    button {
+      width: 150px;
+      height: 30px;
+      margin-top: 10px;
+      border: solid 1px #999;
+      font-size: 13px;
+      font-weight: bold;
+      background-color: darkgray;
+    }
+
+    .radio-text {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="player">
+    <canvas class="canvas"></canvas>
+  </div>
+
+  <div class="operation">
+    <h2 class="fps">Frame rate: <span class="fps-num">NaN</span> FPS</h2>
+    <div class="operation-item">
+      <input name="options" value="0" type="radio" checked="checked" />
+      <span class="radio-text">No filter</span>
+    </div>
+    <div class="operation-item">
+      <input name="options" value="1" type="radio" />
+      <span class="radio-text">Use <strong>JavaScript</strong> filter</span>
+    </div>
+    <div class="operation-item">
+      <input name="options" value="2" type="radio" />
+      <span class="radio-text">Use <strong>WebAssembly</strong> filter</span>
+    </div>
+    <button>confirm</button>
+  </div>
+  <video class="video" muted="muted" loop="true" autoplay="true" src="media/bamboo.mp4" type="video/mp4">
+</body>
+<script src='./src/dip.js'></script>
+
+</html>
